@@ -32,18 +32,18 @@ interface TodoItemProps extends TodoActions {
 // 우선순위에 따른 색상 정의
 const priorityColors = {
   [Priority.HIGH]: {
-    bg: '#ffb3b3',
-    text: '#d32f2f', // 더 연한 빨간색
+    bg: '#ffd6d6',
+    text: '#d32f2f',
     label: '높음'
   },
   [Priority.MEDIUM]: {
-    bg: '#ffe082', 
-    text: '#ed6c02', // 더 연한 주황색
+    bg: '#fff4c8',
+    text: '#ed6c02',
     label: '중간'
   },
   [Priority.LOW]: {
-    bg: '#c8e6c9',
-    text: '#2e7d32', // 더 연한 초록색
+    bg: '#e8f5e9',
+    text: '#2e7d32',
     label: '낮음'
   }
 };
@@ -150,7 +150,7 @@ const ViewMode = memo(({
     <Box sx={{ 
       display: 'flex', 
       alignItems: 'center', 
-      width: 'calc(100% - 150px)',
+      width: 'calc(100% - 120px)',
       pl: isMobile ? 1 : 2,
       pr: isMobile ? 8 : 2,
       py: isMobile ? 1 : 1.5
@@ -168,7 +168,7 @@ const ViewMode = memo(({
           }}
         />
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mr: isMobile ? 2 : 3 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mr: isMobile ? 1 : 2 }}>
         <Tooltip title="우선순위 변경">
           <Chip 
             icon={<FlagIcon fontSize={isMobile ? "small" : "medium"} />} 
@@ -202,15 +202,15 @@ const ViewMode = memo(({
       </Box>
     </Box>
     <ListItemSecondaryAction sx={{ 
-      right: isMobile ? 6 : 12, 
+      right: isMobile ? 4 : 8, 
       display: 'flex', 
-      gap: isMobile ? 0.5 : 1.5
+      gap: isMobile ? 0 : 1
     }}>
       <IconButton
         onClick={() => onToggle(todo.id)}
         color={todo.completed ? 'success' : 'default'}
         size={isMobile ? "small" : "medium"}
-        sx={{ mx: isMobile ? 0.5 : 0.75 }}
+        sx={{ mx: isMobile ? 0.25 : 0.5 }}
       >
         <CheckIcon fontSize={isMobile ? "small" : "medium"} />
       </IconButton>
@@ -218,7 +218,7 @@ const ViewMode = memo(({
         onClick={handleStartEdit}
         color="primary"
         size={isMobile ? "small" : "medium"}
-        sx={{ mx: isMobile ? 0.5 : 0.75 }}
+        sx={{ mx: isMobile ? 0.25 : 0.5 }}
       >
         <EditIcon fontSize={isMobile ? "small" : "medium"} />
       </IconButton>
@@ -226,7 +226,7 @@ const ViewMode = memo(({
         onClick={() => onDelete(todo.id)}
         color="error"
         size={isMobile ? "small" : "medium"}
-        sx={{ mx: isMobile ? 0.5 : 0.75 }}
+        sx={{ mx: isMobile ? 0.25 : 0.5 }}
       >
         <DeleteIcon fontSize={isMobile ? "small" : "medium"} />
       </IconButton>

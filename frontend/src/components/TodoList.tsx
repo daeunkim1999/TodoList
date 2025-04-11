@@ -8,25 +8,6 @@ import { StyledPaper, GlobalStyles } from '../styles/TodoStyles';
 // localStorage 키 상수
 const TODOS_STORAGE_KEY = 'todos-data';
 
-// 우선순위에 따른 색상 정의
-const priorityColors = {
-  [Priority.HIGH]: {
-    bg: '#ffb3b3',
-    text: '#d32f2f', // 더 연한 빨간색
-    label: '높음'
-  },
-  [Priority.MEDIUM]: {
-    bg: '#ffe082', 
-    text: '#ed6c02', // 더 연한 주황색
-    label: '중간'
-  },
-  [Priority.LOW]: {
-    bg: '#c8e6c9',
-    text: '#2e7d32', // 더 연한 초록색
-    label: '낮음'
-  }
-};
-
 const TodoList: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -92,7 +73,16 @@ const TodoList: React.FC = () => {
 
   // 우선순위에 따른 배경색 가져오기
   const getPriorityBackgroundColor = (priority: Priority) => {
-    return priorityColors[priority].bg;
+    switch (priority) {
+      case Priority.HIGH:
+        return '#ffd6d6'; // 연한 빨간색
+      case Priority.MEDIUM:
+        return '#fff4c8'; // 연한 노란색
+      case Priority.LOW:
+        return '#e8f5e9'; // 연한 초록색
+      default:
+        return '#ffffff';
+    }
   };
 
   // 완료되지 않은 항목을 먼저, 완료된 항목을 나중에 표시하도록 정렬

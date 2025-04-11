@@ -19,17 +19,17 @@ import { Priority } from '../types';
 const priorityColors = {
   [Priority.HIGH]: {
     bg: '#ffb3b3',
-    text: '#d32f2f', // 더 연한 빨간색
+    text: '#8b0000', // 더 진한 빨간색
     label: '높음'
   },
   [Priority.MEDIUM]: {
     bg: '#ffe082', 
-    text: '#ed6c02', // 더 연한 주황색
+    text: '#b23c00', // 더 진한 주황색
     label: '중간'
   },
   [Priority.LOW]: {
     bg: '#c8e6c9',
-    text: '#2e7d32', // 더 연한 초록색
+    text: '#0a3d0a', // 더 진한 초록색
     label: '낮음'
   }
 };
@@ -112,10 +112,8 @@ const TodoForm: React.FC<TodoFormProps> = ({ onAdd }) => {
                   color="error"
                   sx={{ 
                     backgroundColor: priorityColors[Priority.HIGH].bg,
-                    color: priorityColors[Priority.HIGH].text,
                     fontSize: isMobile ? '0.7rem' : '0.8rem',
-                    height: isMobile ? 24 : 32,
-                    fontWeight: 'bold'
+                    height: isMobile ? 24 : 32
                   }}
                 />
               </MenuItem>
@@ -127,10 +125,8 @@ const TodoForm: React.FC<TodoFormProps> = ({ onAdd }) => {
                   color="warning"
                   sx={{ 
                     backgroundColor: priorityColors[Priority.MEDIUM].bg,
-                    color: priorityColors[Priority.MEDIUM].text,
                     fontSize: isMobile ? '0.7rem' : '0.8rem',
-                    height: isMobile ? 24 : 32,
-                    fontWeight: 'bold'
+                    height: isMobile ? 24 : 32
                   }}
                 />
               </MenuItem>
@@ -142,10 +138,8 @@ const TodoForm: React.FC<TodoFormProps> = ({ onAdd }) => {
                   color="success"
                   sx={{ 
                     backgroundColor: priorityColors[Priority.LOW].bg,
-                    color: priorityColors[Priority.LOW].text,
                     fontSize: isMobile ? '0.7rem' : '0.8rem',
-                    height: isMobile ? 24 : 32,
-                    fontWeight: 'bold'
+                    height: isMobile ? 24 : 32
                   }}
                 />
               </MenuItem>
