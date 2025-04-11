@@ -168,7 +168,7 @@ const ViewMode = memo(({
           }}
         />
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mr: isMobile ? 1 : 2 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mr: isMobile ? 2 : 3 }}>
         <Tooltip title="우선순위 변경">
           <Chip 
             icon={<FlagIcon fontSize={isMobile ? "small" : "medium"} />} 
@@ -204,7 +204,7 @@ const ViewMode = memo(({
     <ListItemSecondaryAction sx={{ 
       right: isMobile ? 4 : 8, 
       display: 'flex', 
-      gap: isMobile ? 0 : 1
+      gap: isMobile ? 0.5 : 1
     }}>
       <IconButton
         onClick={() => onToggle(todo.id)}
